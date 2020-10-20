@@ -1,0 +1,14 @@
+"day","inscription","reminder","absence","presence","total"
+"Friday","doodle","no",7,11,18
+"Friday","doodle","yes",0,2,2
+"Friday","panel","yes",0,10,10
+"Monday","doodle","no",5,4,9
+"Monday","doodle","yes",2,6,8
+"Monday","panel","yes",6,12,18
+"Thursday","doodle","no",3,11,14
+"Tuesday","doodle","no",4,10,14
+"Tuesday","doodle","yes",1,7,8
+"Tuesday","panel","yes",0,9,9
+"Wednesday","doodle","no",6,11,17
+"Wednesday","doodle","yes",0,4,4
+"Wednesday","panel","yes",0,14,14

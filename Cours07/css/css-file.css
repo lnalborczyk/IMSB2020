@@ -1,0 +1,212 @@
+/* ###############################################################################
+# see the original full css here:
+https://raw.githubusercontent.com/rstudio/rstudio/44b1b2815b76013d5a2ba6e9a203ab52be7e5d9e/src/cpp/session/resources/presentation/slides.css
+#################################################################### */
+
+/* #############################################################################################
+# changing font (from xaringa: https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/default-fonts.css)
+#################################################################### */
+
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+
+/* #######################################
+# setting global font
+############################ */
+
+body { 
+  font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+}
+
+h1, h2, h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: normal;
+}
+
+/* #######################################
+# font sizes
+############################ */
+
+.reveal p { /* regular pragraphs */
+    font-size: 90%;
+}
+
+.reveal ul { /* regular pragraphs */
+    font-size: 90%;
+}
+
+.MathJax {
+    font-size: 1em !important;
+    /*line-height: 10em !important;*/
+}
+
+/* #######################################
+# code chunks formatting
+############################ */
+
+.reveal pre {   
+  margin-top: 0;
+  max-width: 95%;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 1em;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 0.5em; /* change code indentation */
+  font-family: "Source Code pro", monospace;
+  font-size: 130%;
+  line-height: 1.1em;
+  background-color: white; /* bg color or code result */
+  overflow: visible;
+  max-height: none;
+  word-wrap: normal;
+}
+
+/* ############################################
+# progress bar (at the bottom)
+#################################### */
+
+.reveal .progress {
+  height: 1%;
+  color: #646D7E;
+  /*top: 0;*/ /* uncomment to place the progress bar at the top*/
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ############################################
+# black background properties
+#################################### */
+
+.black .reveal .state-background {
+    background: black;}
+    
+.black .reveal p {
+    color: black;
+    position: relative;
+    top: 4%;
+    line-height: 50%;
+}
+
+/* ############################################
+# line height(s)
+#################################### */
+
+.lineheight .reveal p {
+    line-height: 160%;
+}
+
+.reveal p {
+    line-height: 10px;
+}
+
+.lineheight .reveal ul {
+    line-height: 160%; /* ul = unordered list */
+}
+
+/* I think this is useless, no ?
+.reveal section del {
+  color: steelblue;
+}
+*/
+
+/* ############################################
+# space between slide title and body
+########################################## */
+
+.reveal h3 { 
+  margin-top: 2%;
+  margin-bottom: 4%;
+  font-weight: normal; /* can be replaced by bold */
+}
+
+/* ################################################
+# removing box shadow around images
+########################################## */
+
+.reveal section img {
+   border: none;
+   box-shadow: none;
+}
+
+/* ################################
+# title slide
+########################### */
+
+/* nice colors: #6D7B8D, #657383, #616D7E, #646D7E, #566D7E */
+
+/*
+.section .reveal .state-background {
+   background: #566D7E;
+}
+
+.reveal h1 { 
+  font-size: 3.25em;
+  line-height: 100%;
+  margin-bottom: 5%;
+}
+*/
+
+.section .reveal .state-background {
+   background: #566D7E;
+}
+
+.section .reveal h1 { 
+  font-size: 350%;
+  line-height: 125%;
+  margin-top: 10%;
+  margin-bottom: 20%;
+  word-wrap: normal;
+}
+
+.section .reveal p { 
+  font-size: 1.25em;
+  line-height: 150%;
+  word-wrap: normal;
+}
+
+/* ################################
+# columns size  
+########################### */
+
+.reveal .slides section .column1 {
+   left: 5%;
+}
+
+.reveal .slides section .column2 {
+   left: 50%;
+}
+
+/* ################################
+# remove table borders  
+########################### */
+
+.reveal table { /* cadre global */
+  border-width: 0;
+}
+
+.reveal table th {
+  border-width: 0;
+}
+
+.reveal table td {
+  border-width: 0;
+}
+
+/* ############################################
+# centered transition slide
+#################################### */
+
+.center h3 {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-style: italic;
+}
+
