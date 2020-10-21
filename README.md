@@ -32,50 +32,18 @@ Télécharger le répertoire entier (en cliquant sur le bouton vert) puis double
 
 Suivre les liens ci-dessous pour consulter les slides en ligne (MDP Zoom : IMSB2020).
 
-Cours n°01 : Introduction à l'inférence bayésienne <br>
-> Mardi 6 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/93467180046?pwd=Si9OSnl6SzdTUVg4U1UwSTFyOUVEdz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours01).
-
-Cours n°02 : Modèle beta-binomial <br>
-> Vendredi 9 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/96169760384?pwd=cmFqUEJ0TTdEWjYwN29Ya0lPUFF2Zz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02).
-
-Cours n°03 : Introduction à brms, modèle de régression linéaire <br>
-> Mardi 13 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/97299937306?pwd=ZDhPZmI2N3EyK3lQRjl2SkhaTEF6Zz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03).
-
-Cours n°04 : Modèle de régression linéaire (suite) <br>
-> Vendredi 16 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/98781324900?pwd=S1dLbjhPK3VrQnRZNmN0a2kzQ0t0dz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours04).
-
-Cours n°05 : Markov Chain Monte Carlo <br>
-> Mardi 20 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/98264501064?pwd=VFlEU1lVQmNWNlArTEp6MmZaeFdzdz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours05).
-
-Cours n°06 : Modèle linéaire généralisé <br>
-> Vendredi 23 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/93336809011?pwd=TFFLUElkbHdjbkx4OFFuSnFSVENsdz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours06).
-
-Cours n°07 : Comparaison de modèles <br>
-> Mardi 27 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/92690924574?pwd=MFlHell2eHFReHl5R3JkRnpOWTlzQT09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours07).
-
-Cours n°08 : Modèles multi-niveaux <br>
-> Vendredi 30 Octobre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94624686231?pwd=aWVFdzZOZ2VSKy8xaUdnUWtnamlBdz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours08).
-
-Cours n°09 : Modèles multi-niveaux généralisés <br>
-> Mardi 3 Novembre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/97569015383?pwd=ai9vVlJCODVvMEdNMUpFTElOdlNtUT09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours09).
-
-Cours n°10 : Data Hackaton <br>
-> Vendredi 6 Novembre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94061357264?pwd=cWJiZkVKejRiVWZaaEJaSS96LzNBZz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10).
-
-<br>
-
-| Cours      | Calendrier         | Contenu          |
-|:----------:|:------------------:|:----------------:|
+| Cours      | Calendrier                       | Contenu          |
+|:----------:|:--------------------------------:|:----------------:|
 | Cours n°01 | Mardi 6 Octobre de 14h à 16h | Introduction à l'inférence bayésienne <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours01)> |
 | Cours n°02 | Vendredi 9 Octobre de 14h à 16h | Modèle Beta-Binomial <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02)> |
 | Cours n°03 | Mardi 13 Octobre de 14h à 16h | Introduction à brms, modèle de régression linéaire <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03)> |
 | Cours n°04 | Vendredi 16 Octobre de 14h à 16h | Modèle de régression linéaire (suite) <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours04)> |
 | Cours n°05 | Mardi 20 Octobre de 14h à 16h | Markov Chain Monte Carlo <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours05)> |
-| Cours n°06 | Vendredi 23 Octobre de 14h à 16h | Modèle linéaire généralisé <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours06)> |
-| Cours n°07 | Mardi 27 Octobre de 14h à 16h | Comparaison de modèles <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours07)> |
-| Cours n°08 | Vendredi 30 Octobre de 14h à 16h | Modèles multi-niveaux  <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours08)> |
-| Cours n°09 | Mardi 3 Novembre de 14h à 16h | Modèles multi-niveaux généralisés <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours09)> |
-| Cours n°10 | Vendredi 6 Novembre de 14h à 16h | Data Hackaton <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10)> |
+| Cours n°06 | Vendredi 23 Octobre de 14h à 16h | Modèle linéaire généralisé <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours06)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/93336809011?pwd=TFFLUElkbHdjbkx4OFFuSnFSVENsdz09)> |
+| Cours n°07 | Mardi 27 Octobre de 14h à 16h | Comparaison de modèles <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours07)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/92690924574?pwd=MFlHell2eHFReHl5R3JkRnpOWTlzQT09)> |
+| Cours n°08 | Vendredi 30 Octobre de 14h à 16h | Modèles multi-niveaux  <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours08)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94624686231?pwd=aWVFdzZOZ2VSKy8xaUdnUWtnamlBdz09)> |
+| Cours n°09 | Mardi 3 Novembre de 14h à 16h | Modèles multi-niveaux généralisés <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours09)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/97569015383?pwd=ai9vVlJCODVvMEdNMUpFTElOdlNtUT09)> |
+| Cours n°10 | Vendredi 6 Novembre de 14h à 16h | Data Hackaton <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94061357264?pwd=cWJiZkVKejRiVWZaaEJaSS96LzNBZz09)> |
 
 ## Pour aller plus loin
 
