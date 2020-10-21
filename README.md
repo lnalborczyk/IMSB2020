@@ -62,8 +62,10 @@ Cours n°09 : Modèles multi-niveaux généralisés <br>
 Cours n°10 : Data Hackaton <br>
 > Vendredi 6 Novembre de 14h à 16h. Lien vers [Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94061357264?pwd=cWJiZkVKejRiVWZaaEJaSS96LzNBZz09), [Slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10).
 
-| Cours | Calendrier | Contenu |
-| ----- | -----------| ------- |
+<br>
+
+| Cours     | Calendrier      | Contenu      |
+|:---------:|:---------------:|:------------:|
 | Cours n°01 | Mardi 6 Octobre de 14h à 16h | Introduction à l'inférence bayésienne <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours01)> |
 | Cours n°02 | Vendredi 9 Octobre de 14h à 16h | Modèle beta-binomial <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02)> |
 | Cours n°03 | Mardi 13 Octobre de 14h à 16h | Introduction à brms, modèle de régression linéaire <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03)> |
