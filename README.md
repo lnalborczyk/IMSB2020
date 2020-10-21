@@ -64,10 +64,10 @@ Cours n°10 : Data Hackaton <br>
 
 <br>
 
-| Cours     | Calendrier      | Contenu      |
-|:---------:|:---------------:|:------------:|
+| Cours      | Calendrier         | Contenu          |
+|:----------:|:------------------:|:----------------:|
 | Cours n°01 | Mardi 6 Octobre de 14h à 16h | Introduction à l'inférence bayésienne <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours01)> |
-| Cours n°02 | Vendredi 9 Octobre de 14h à 16h | Modèle beta-binomial <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02)> |
+| Cours n°02 | Vendredi 9 Octobre de 14h à 16h | Modèle Beta-Binomial <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02)> |
 | Cours n°03 | Mardi 13 Octobre de 14h à 16h | Introduction à brms, modèle de régression linéaire <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03)> |
 | Cours n°04 | Vendredi 16 Octobre de 14h à 16h | Modèle de régression linéaire (suite) <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours04)> |
 | Cours n°05 | Mardi 20 Octobre de 14h à 16h | Markov Chain Monte Carlo <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours05)> |

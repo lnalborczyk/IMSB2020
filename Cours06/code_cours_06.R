@@ -1,4 +1,4 @@
-## ----setup, include = FALSE-----------------------------------------------------------------------------------------
+## ----setup, include = FALSE--------------------------------------------------------------------------------------------------
 library(tidyverse)
 library(patchwork)
 library(plotly)
@@ -13,7 +13,7 @@ opts_chunk$set(
   )
 
 
-## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"-----------------------------------------------
+## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"--------------------------------------------------------
 # plot from https://bookdown.org/content/4857/big-entropy-and-the-generalized-linear-model.html#generalized-linear-models
 
 tibble(x = seq(from = -1, to = 3, by = 0.01) ) %>%
@@ -30,7 +30,7 @@ tibble(x = seq(from = -1, to = 3, by = 0.01) ) %>%
   labs(x = "Prédicteur", y = "Probabilité")
 
 
-## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"-----------------------------------------------
+## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"--------------------------------------------------------
 # plot from https://bookdown.org/content/4857/big-entropy-and-the-generalized-linear-model.html#generalized-linear-models
 # fonction logit utilisée dans le GLM binomial (ou régression logistique)
 
@@ -121,7 +121,7 @@ p1 + p2
 #   labs(y = "Probability")
 
 
-## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"-----------------------------------------------
+## ---- echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"--------------------------------------------------------
 # plot from https://bookdown.org/content/4857/big-entropy-and-the-generalized-linear-model.html#generalized-linear-models
 # fonction logit utilisée dans le GLM binomial (ou régression logistique)
 
@@ -212,20 +212,20 @@ p1 + p2
 #   labs(y = "Probability")
 
 
-## ----chimp, echo = FALSE, out.width = "50%"-------------------------------------------------------------------------
+## ----chimp, echo = FALSE, out.width = "50%"----------------------------------------------------------------------------------
 knitr::include_graphics("figures/chimp_exp.jpg")
 
 
-## ---- echo = TRUE---------------------------------------------------------------------------------------------------
+## ---- echo = TRUE------------------------------------------------------------------------------------------------------------
 library(tidyverse)
 library(rethinking)
 
-data(chimpanzees) # see ?chimpanzees for information on the variables
+data(chimpanzees) # see ?chimpanzees for more information on the dataset
 df1 <- chimpanzees
 str(df1)
 
 
-## ----mod1, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod1, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 library(brms)
 
 mod1.1 <- brm(
@@ -238,7 +238,7 @@ mod1.1 <- brm(
   )
 
 
-## ----ppc-mod1.1, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "60%"------------------------
+## ----ppc-mod1.1, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "60%"---------------------------------
 # extracts prior samples
 prior_samples(mod1.1) %>%
   # applies the inverse link function
@@ -246,10 +246,10 @@ prior_samples(mod1.1) %>%
   ggplot(aes(x = p) ) +
   geom_density(fill = "steelblue", adjust = 0.1) +
   theme_bw(base_size = 20) +
-  labs(x = "Prior probability of pulling left", y = "Density")
+  labs(x = "Probabilité a priori de tirer le levier gauche", y = "Densité de probabilité")
 
 
-## ----ppc-mod1.2, eval = TRUE, echo = FALSE, results = "hide", fig.width = 12, fig.height = 6, out.width = "80%"-----
+## ----ppc-mod1.2, eval = TRUE, echo = FALSE, results = "hide", fig.width = 12, fig.height = 6, out.width = "80%"--------------
 mod1.2 <- brm(
   formula = pulled_left | trials(1) ~ 1,
   family = binomial,
@@ -267,17 +267,16 @@ bind_rows(prior_samples(mod1.1), prior_samples(mod1.2) ) %>%
   geom_density(alpha = 0.8, adjust = 0.1) +
   scale_fill_manual(expression(italic(omega) ), values = c("steelblue", "blue") ) +
   theme_bw(base_size = 20) +
-  labs(x = "Prior probability of pulling left", y = "Density")
+  labs(x = "Probabilité a priori de tirer le levier gauche", y = "Densité de probabilité")
 
 
-## ---- eval = TRUE, echo = TRUE--------------------------------------------------------------------------------------
-fixed_effects <- fixef(mod1.2)
+## ---- eval = TRUE, echo = TRUE-----------------------------------------------------------------------------------------------
+fixed_effects <- fixef(mod1.2) # effets fixes (ou constants)
+rethinking::logistic(fixed_effects) # fonction de lien inverse
+plogis(fixed_effects) # fonction de lien inverse
 
-rethinking::logistic(fixed_effects)
-plogis(fixed_effects)
 
-
-## ---- eval = TRUE, echo = TRUE, results = "hide", fig.width = 12, fig.height = 8, out.width = "50%"-----------------
+## ---- eval = TRUE, echo = TRUE, results = "hide", fig.width = 12, fig.height = 8, out.width = "50%"--------------------------
 post <- posterior_samples(mod1.2)
 intercept_samples <- plogis(post$b_Intercept)
 
@@ -287,7 +286,7 @@ library(coda)
 plotPost(intercept_samples, compVal = 0.5, xlab = "Probability of pulling left")
 
 
-## ----mod2, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod2, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 # recoding predictors
 df1 <- df1 %>%
   mutate(
@@ -309,7 +308,7 @@ mod2.1 <- brm(
   )
 
 
-## ----ppc-mod2.1, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"------------------------
+## ----ppc-mod2.1, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"---------------------------------
 prior_samples(mod2.1) %>%
   mutate(
     condition1 = plogis(Intercept - 0.5 * b),
@@ -318,10 +317,13 @@ prior_samples(mod2.1) %>%
   ggplot(aes(x = condition2 - condition1) ) +
   geom_density(fill = "steelblue", adjust = 0.1) +
   theme_bw(base_size = 20) +
-  labs(x = "Prior difference in probability between conditions", y = "Probability density")
+  labs(
+    x = "Différence dans la probabilité a priori de tirer le levier gauche entre conditions",
+    y = "Densité de probabilité"
+    )
 
 
-## ----mod2.2, eval = TRUE, echo = TRUE, results = "hide"-------------------------------------------------------------
+## ----mod2.2, eval = TRUE, echo = TRUE, results = "hide"----------------------------------------------------------------------
 priors <- c(
   set_prior("normal(0, 1)", class = "Intercept"),
   set_prior("normal(0, 1)", class = "b")
@@ -336,7 +338,7 @@ mod2.2 <- brm(
   )
 
 
-## ----ppc-mod2.2, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"------------------------
+## ----ppc-mod2.2, eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"---------------------------------
 prior_samples(mod2.2) %>%
   mutate(
     condition1 = plogis(Intercept - 0.5 * b),
@@ -345,23 +347,26 @@ prior_samples(mod2.2) %>%
   ggplot(aes(x = condition2 - condition1) ) +
   geom_density(fill = "steelblue", adjust = 0.1) +
   theme_bw(base_size = 20) +
-  labs(x = "Prior difference in probability between conditions", y = "Probability density")
+  labs(
+    x = "Différence dans la probabilité a priori de tirer le levier gauche entre conditions",
+    y = "Densité de probabilité"
+    )
 
 
-## ---- eval = TRUE, echo = TRUE--------------------------------------------------------------------------------------
+## ---- eval = TRUE, echo = TRUE-----------------------------------------------------------------------------------------------
 summary(mod2.2)
 
 
-## ---- eval = TRUE, echo = TRUE--------------------------------------------------------------------------------------
+## ---- eval = TRUE, echo = TRUE-----------------------------------------------------------------------------------------------
 fixef(mod2.2)
 
 
-## ---- eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"-----------------------------------
+## ---- eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6, out.width = "50%"--------------------------------------------
 post <- posterior_samples(mod2.2)
-plotPost(exp(post$b_prosoc_left), compVal = 1, xlab = "Proportional odds of pulling left")
+plotPost(exp(post$b_prosoc_left), compVal = 1, xlab = "Odds ratio")
 
 
-## ---- eval = TRUE, echo = TRUE--------------------------------------------------------------------------------------
+## ---- eval = TRUE, echo = TRUE-----------------------------------------------------------------------------------------------
 model_predictions <- fitted(mod2.2) %>%
   data.frame() %>% 
   bind_cols(df1) %>%
@@ -371,7 +376,7 @@ model_predictions <- fitted(mod2.2) %>%
     )
 
 
-## ---- eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "50%"----------------------------------
+## ---- eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "50%"-------------------------------------------
 model_predictions %>%
   ggplot(aes(
     x = prosoc_left, y = Estimate,
@@ -390,21 +395,21 @@ model_predictions %>%
     ) +
   ylim(0, 1) +
   theme_bw(base_size = 20) +
-  scale_x_discrete(labels = c("no", "yes") ) +
-  scale_colour_discrete(labels = c("alone", "social") ) +
+  scale_x_discrete(labels = c("Non", "Oui") ) +
+  scale_colour_discrete(labels = c("Seul", "Social") ) +
   labs(
-  x = "Was the prosocial option on the left?",
-  y = "Probability of pulling the left lever"
+  x = "Est-ce que l'option prosociale était à gauche ?",
+  y = "Probabilité de tirer le levier gauche"
   )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 library(rethinking)
 data(UCBadmit)
 (df2 <- UCBadmit)
 
 
-## ----mod3, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod3, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 priors <- c(set_prior("normal(0, 1)", class = "Intercept") )
 
 mod3 <- brm(
@@ -416,7 +421,7 @@ mod3 <- brm(
   )
 
 
-## ----mod4, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod4, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 priors <- c(
   set_prior("normal(0, 1)", class = "Intercept"),
   set_prior("normal(0, 1)", class = "b")
@@ -434,11 +439,11 @@ mod4 <- brm(
   )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 summary(mod4)
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 6, fig.height = 4, out.width = "50%"-------------------------------------
+## ----eval = TRUE, echo = TRUE, fig.width = 8, fig.height = 6, out.width = "50%"----------------------------------------------
 post <- posterior_samples(mod4)
 p.admit.male <- plogis(post$b_Intercept + post$b_male)
 p.admit.female <- plogis(post$b_Intercept)
@@ -446,7 +451,7 @@ diff.admit <- p.admit.male - p.admit.female
 plotPost(diff.admit, compVal = 0)
 
 
-## ----eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"-----------------------------------
+## ----eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"--------------------------------------------
 # pp_check(mod4, type = "intervals", nsamples = 1e2, prob = 0.5, prob_outer = 0.95) +
 #   scale_x_continuous(breaks = 1:12, limits = c(1, 12) ) +
 #   theme_bw(base_size = 20) +
@@ -500,7 +505,7 @@ ggplot(data = df2, aes(x = case, y = admit / applications) ) +
     )
 
 
-## ----eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------------
 # modèle sans prédicteur
 mod5 <- brm(
   admit | trials(applications) ~ 0 + dept,
@@ -518,15 +523,15 @@ mod6 <- brm(
   )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 summary(mod6)
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 fixef(mod6)
 
 
-## ----eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"-----------------------------------
+## ----eval = TRUE, echo = FALSE, fig.width = 12, fig.height = 6, out.width = "75%"--------------------------------------------
 predict(mod6) %>%
   as_tibble() %>% 
   bind_cols(df2) %>%
@@ -563,12 +568,12 @@ predict(mod6) %>%
     )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 df3 <- read.csv("data/absence.csv")
 df3 %>% sample_frac %>% head(10)
 
 
-## ----mod7, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod7, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 mod7 <- brm(
     presence | trials(total) ~ 1,
     family = binomial(link = "logit"),
@@ -578,12 +583,12 @@ mod7 <- brm(
     )
 
 
-## ---- eval = TRUE, echo = TRUE--------------------------------------------------------------------------------------
-fixef(mod7) # effet relatif (cote)
+## ---- eval = TRUE, echo = TRUE-----------------------------------------------------------------------------------------------
+fixef(mod7) # effet relatif (log de la cote)
 fixef(mod7) %>% plogis # effet absolu (probabilité de présence)
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 df3 <-
   df3 %>%
   mutate(
@@ -594,7 +599,7 @@ df3 <-
 head(df3, n = 10)
 
 
-## ----mod8, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod8, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 priors <- c(
   set_prior("normal(0, 1)", class = "Intercept"),
   set_prior("normal(0, 1)", class = "b")
@@ -609,18 +614,18 @@ mod8 <- brm(
     )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 exp(fixef(mod8)[2]) # odds ratio between no-reminder and reminder
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 10, fig.height = 5-------------------------------------------------------
+## ----eval = TRUE, echo = TRUE, fig.width = 10, fig.height = 5----------------------------------------------------------------
 post <- posterior_samples(mod8) # extracting posterior samples
 p.no <- plogis(post$b_Intercept) # mean probability of presence when no reminder
 p.yes <- plogis(post$b_Intercept + post$b_reminder) # mean probability of presence when reminder
 plotPost(p.yes - p.no, compVal = 0, showMode = TRUE) # plotting it
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 8, fig.height = 4--------------------------------------------------------
+## ----eval = TRUE, echo = TRUE, fig.width = 8, fig.height = 4-----------------------------------------------------------------
 library(tidybayes)
 library(modelr)
 
@@ -638,7 +643,7 @@ df3 %>%
   labs(x = "Mail de rappel", y = "Probabilité de présence")
 
 
-## ----mod9, eval = TRUE, echo = TRUE, results = "hide"---------------------------------------------------------------
+## ----mod9, eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
 priors <- c(
   set_prior("normal(0, 1)", class = "Intercept"),
   set_prior("normal(0, 1)", class = "b")
@@ -653,14 +658,14 @@ mod9 <- brm(
     )
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 10, fig.height = 5-------------------------------------------------------
+## ----eval = TRUE, echo = TRUE, fig.width = 10, fig.height = 5----------------------------------------------------------------
 post <- posterior_samples(mod9)
 p.panel <- plogis(post$b_Intercept) # mean probability of presence for panel
 p.doodle <- plogis(post$b_Intercept + post$b_inscription) # mean probability of presence for doodle
 plotPost(p.panel - p.doodle, compVal = 0, showMode = TRUE) # plotting it
 
 
-## ----mod10, eval = TRUE, echo = TRUE, results = "hide"--------------------------------------------------------------
+## ----mod10, eval = TRUE, echo = TRUE, results = "hide"-----------------------------------------------------------------------
 priors <- c(
   set_prior("normal(0, 1)", class = "Intercept"),
   set_prior("normal(0, 1)", class = "b")
@@ -675,24 +680,24 @@ mod10 <- brm(
     )
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 summary(mod10)
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 fixef(mod8) %>% exp
 fixef(mod9) %>% exp
 fixef(mod10) %>% exp
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6-------------------------------------------------------
+## ----eval = TRUE, echo = TRUE, fig.width = 12, fig.height = 6----------------------------------------------------------------
 posterior_samples(mod10) %>%
     ggplot(aes(b_reminder, b_inscription) ) +
     geom_point(size = 3, pch = 21, alpha = 0.8, color = "white", fill = "black") +
     theme_bw(base_size = 20)
 
 
-## ----eval = TRUE, echo = TRUE---------------------------------------------------------------------------------------
+## ----eval = TRUE, echo = TRUE------------------------------------------------------------------------------------------------
 read.csv("data/absence.csv") %>%
   sample_frac %>%
   group_by(inscription, reminder) %>%
