@@ -33,7 +33,7 @@ Télécharger le répertoire entier (en cliquant sur le bouton vert) puis double
 Suivre les liens ci-dessous pour consulter les slides en ligne. NB : tous les cours ont lieu de 14h à 16h (MDP Zoom : IMSB2020)
 
 | Cours | Calendrier | Matériel |
-|:-----:|:----------:|:--------:|
+|-------|:----------:|:--------:|
 | Cours n°01 : Introduction à l'inférence bayésienne | Mardi 6 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours01)> |
 | Cours n°02 : Modèle Beta-Binomial | Vendredi 9 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours02)> |
 | Cours n°03 : Introduction à brms, modèle de régression linéaire | Mardi 13 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03)> |
@@ -55,11 +55,6 @@ Suivre les liens ci-dessous pour consulter les slides en ligne. NB : tous les co
 - Kurz, S. (2019). *Statistical Rethinking with brms, ggplot2, and the tidyverse*. Available [online](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/).
 - Kruschke, J. K. (2015). *Doing Bayesian Data Analysis, Second Edition: A Tutorial with R, JAGS, and Stan*. Academic Press / Elsevier.
 - Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., Rubin, D. B. (2013). *Bayesian Data Analysis, third edition*. London: CRC Press.
-
-### Articles, blogs
-
-- Visualisation des algorithmes MCMC : https://chi-feng.github.io/mcmc-demo/
-- Stein's paradox in statistics (Efron & Morris, 1977) : http://statweb.stanford.edu/~ckirby/brad/other/Article1977.pdf
 
 ### Vidéos
 
