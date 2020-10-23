@@ -39,7 +39,7 @@ Suivre les liens ci-dessous pour consulter les slides en ligne. NB : tous les co
 | Cours n°03 : Introduction à brms, modèle de régression linéaire | Mardi 13 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours03)> |
 | Cours n°04 : Modèle de régression linéaire (suite) | Vendredi 16 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours04)> |
 | Cours n°05 : Markov Chain Monte Carlo | Mardi 20 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours05)> |
-| Cours n°06 : Modèle linéaire généralisé | Vendredi 23 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours06)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/93336809011?pwd=TFFLUElkbHdjbkx4OFFuSnFSVENsdz09)> |
+| Cours n°06 : Modèle linéaire généralisé | Vendredi 23 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours06)> |
 | Cours n°07 : Comparaison de modèles | Mardi 27 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours07)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/92690924574?pwd=MFlHell2eHFReHl5R3JkRnpOWTlzQT09)> |
 | Cours n°08 :  Modèles multi-niveaux | Vendredi 30 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours08)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94624686231?pwd=aWVFdzZOZ2VSKy8xaUdnUWtnamlBdz09)> |
 | Cours n°09 : Modèles multi-niveaux généralisés | Mardi 3 Novembre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours09)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/97569015383?pwd=ai9vVlJCODVvMEdNMUpFTElOdlNtUT09)> |
@@ -50,9 +50,8 @@ Suivre les liens ci-dessous pour consulter les slides en ligne. NB : tous les co
 ### Livres
 
 - Lambert, B. (2018). *A Student’s Guide to Bayesian Statistics*. SAGE Publications Ltd.
-- McElreath, R. (2015). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan*. CRC Press.
 - McElreath, R. (2020). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan*. Second Edition. CRC Press.
-- Kurz, S. (2019). *Statistical Rethinking with brms, ggplot2, and the tidyverse*. Available [online](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/).
+- Kurz, S. (2020). *Statistical Rethinking with brms, ggplot2, and the tidyverse*. Available [online](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/).
 - Kruschke, J. K. (2015). *Doing Bayesian Data Analysis, Second Edition: A Tutorial with R, JAGS, and Stan*. Academic Press / Elsevier.
 - Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., Rubin, D. B. (2013). *Bayesian Data Analysis, third edition*. London: CRC Press.
 
