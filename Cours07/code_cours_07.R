@@ -376,7 +376,7 @@ beta <- coef(mod1.8)[2]
 ll <- sum(dnorm(
     d$brain,
     mean = alpha + beta * d$mass.s,
-    sd = sd(residuals(mod1.8) ),
+    sd = sigma(mod1.8),
     log = TRUE)
     )
 
