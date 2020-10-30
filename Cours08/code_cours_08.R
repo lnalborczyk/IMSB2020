@@ -65,8 +65,8 @@ mod1 <- brm(
 posterior_summary(mod1, probs = c(0.025, 0.975) )
 
 
-## ----eval = TRUE, echo = TRUE, fig.width = 15, fig.height = 5----------------------------------------------------------
-plot(mod1, combo = c("dens_overlay", "trace"), theme = theme_bw(base_size = 20) )
+## ----eval = TRUE, echo = TRUE, fig.width = 14, fig.height = 7----------------------------------------------------------
+plot(mod1, combo = c("dens_overlay", "trace"), theme = theme_bw(base_size = 16) )
 
 
 ## ----eval = TRUE, echo = TRUE, results = "hide"------------------------------------------------------------------------
@@ -204,31 +204,56 @@ cov_ab <- sigma_a * sigma_b * rho
 (Sigma2 <- diag(sigmas) %*% Rho %*% diag(sigmas) )
 
 
-## ---- echo = FALSE, fig.width = 7, fig.height = 7, cache = TRUE--------------------------------------------------------
-nsims <- 1e6
+## ---- echo = FALSE, fig.width = 14, fig.height = 7, cache = TRUE-------------------------------------------------------
+# nsims <- 1e6
+# 
+# data.frame(
+#     zeta05 = rethinking::rlkjcorr(nsims, K = 2, eta = 0.5)[, 1, 2],
+#     zeta1 = rethinking::rlkjcorr(nsims, K = 2, eta = 2)[, 1, 2],
+#     zeta5 = rethinking::rlkjcorr(nsims, K = 2, eta = 5)[, 1, 2],
+#     zeta50 = rethinking::rlkjcorr(nsims, K = 2, eta = 10)[, 1, 2] ) %>%
+#     gather(shape, y, zeta05:zeta50) %>%
+#     ggplot(aes(x = y, colour = shape) ) +
+#     geom_line(stat = "density", position = "identity", size = 1) +
+#     labs(x = expression(rho), y = "Densité de probabilité") +
+#     theme_bw(base_size = 18) +
+#     scale_colour_manual(
+#         values = c("steelblue", "orangered", "purple", "darkgreen"),
+#         labels = c(
+#             expression(paste(zeta, " = ", "0.5") ),
+#             expression(paste(zeta, " = ", "2") ),
+#             expression(paste(zeta, " = ", "10") ),
+#             expression(paste(zeta, " = ", "50") )
+#             )
+#         ) +
+#     theme(
+#         legend.text.align = 0,
+#         legend.position = c(0.75, 0.8),
+#         legend.background = element_rect(size = 0.5, colour = "black")
+#         )
 
-data.frame(
-    zeta05 = rethinking::rlkjcorr(nsims, K = 2, eta = 0.5)[, 1, 2],
-    zeta1 = rethinking::rlkjcorr(nsims, K = 2, eta = 1)[, 1, 2],
-    zeta5 = rethinking::rlkjcorr(nsims, K = 2, eta = 5)[, 1, 2],
-    zeta50 = rethinking::rlkjcorr(nsims, K = 2, eta = 10)[, 1, 2] ) %>%
-    gather(shape, y, zeta05:zeta50) %>%
-    ggplot(aes(x = y, linetype = shape) ) +
-    geom_line(stat = "density", position = "identity", size = 0.8, alpha = 1) +
-    labs(x = expression(rho), y = "Densité de probabilité") +
-    theme_bw(base_size = 20) +
-    scale_linetype_manual(
-        values = c("dotted", "dotdash", "dashed", "solid"),
-        labels = c(
-            expression(paste(zeta, " = ", "0.5") ),
-            expression(paste(zeta, " = ", "1") ),
-            expression(paste(zeta, " = ", "10") ),
-            expression(paste(zeta, " = ", "50") ) ) ) +
-    theme(
-        legend.text.align = 0,
-        legend.position = c(0.75, 0.8),
-        legend.background = element_rect(size = 0.5, colour = "black")
-        )
+library(ggdist)
+
+expand.grid(eta = c(0.5, 2, 5, 10), K = c(2, 3, 4, 5) ) %>%
+  ggplot(aes(y = ordered(eta), dist = "lkjcorr_marginal", arg1 = K, arg2 = eta, fill = as.factor(eta) ) ) +
+  stat_dist_slab(p_limits = c(0, 1), alpha = 0.8) +
+  facet_grid(~paste0(K, "x", K) ) +
+  labs(x = expression(rho), y = "Densité de probabilité (par prior)") +
+  theme_bw(base_size = 18) +
+  scale_fill_manual(
+    values = c("steelblue", "orangered", "purple", "darkgreen"),
+    labels = c(
+      expression(paste(zeta, " = ", "0.5") ),
+      expression(paste(zeta, " = ", "2") ),
+      expression(paste(zeta, " = ", "10") ),
+      expression(paste(zeta, " = ", "50") )
+    )
+  ) +
+  theme(
+    legend.title = element_blank(),
+    legend.text.align = 0,
+    legend.background = element_rect(size = 0.5, colour = "black")
+  )
 
 
 ## ----eval = FALSE, echo = TRUE-----------------------------------------------------------------------------------------
@@ -269,7 +294,7 @@ mod5 <- brm(
 
 
 ## ----eval = TRUE, echo = TRUE, fig.width = 9, fig.height = 6-----------------------------------------------------------
-post <- posterior_samples(mod5) # extract posterior samples
+post <- posterior_samples(mod5) # extracts posterior samples
 R <- rlkjcorr(16000, K = 2, eta = 2) # samples from prior
 
 data.frame(prior = R[, 1, 2], posterior = post$cor_cafe__Intercept__afternoon) %>%
