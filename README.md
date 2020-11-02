@@ -20,7 +20,7 @@ Nous utiliserons également un package non publié sur le CRAN, que vous pouvez 
 
 Bien qu'une bonne connaissance de `R` soit un pré-requis d'inscription à la formation, vous trouverez [ici](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) une courte introduction aux bases du langage, qui seront nécessaires afin de bien comprendre les exemples traités lors de la formation.
 
-NB : si la commande d'installation des packages ne fonctionne pas, il s'agit probablement d'un problème de guillemets...
+NB : Si la commande d'installation des packages ne fonctionne pas, il s'agit probablement d'un problème de guillemets...
 
 ## Comment lire les slides ?
 
@@ -30,7 +30,7 @@ Télécharger le répertoire entier (en cliquant sur le bouton vert) puis double
 
 ### Option 2
 
-Suivre les liens ci-dessous pour consulter les slides en ligne. NB : tous les cours ont lieu de 14h à 16h (MDP Zoom : IMSB2020)
+Suivre les liens ci-dessous pour consulter les slides en ligne.
 
 | Cours | Calendrier | Matériel |
 |-------|:----------:|:--------:|
