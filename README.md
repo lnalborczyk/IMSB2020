@@ -1,5 +1,9 @@
 # Introduction à la modélisation statistique bayésienne : Un cours avec R, Stan, et brms
 
+[![GitHub repo size](https://img.shields.io/github/repo-size/lnalborczyk/IMSB2020?color=brightgreen&logo=github)](https://github.com/lnalborczyk/IMSB2020)
+[![GitHub last commit](https://img.shields.io/github/last-commit/lnalborczyk/IMSB2020?color=orange&logo=github)](https://github.com/lnalborczyk/IMSB2020)
+[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz)](https://twitter.com/lnalborczyk)
+
 ## Programme
 
 L’objectif de cette formation est de vous faire découvrir la modélisation statistique bayésienne. Les concepts et outils qui seront introduits tout au long de la formation seront illustrés par des cas concrets d’analyse de données. Ce cours est construit autour du langage `R` et de l’utilisation du package `brms`, une interface au langage probabiliste `Stan`. Par conséquent, il est indispensable d’avoir quelques connaissances élémentaires du langage `R`.
@@ -63,4 +67,4 @@ Suivre les liens ci-dessous pour consulter les slides en ligne.
 
 ## Contact
 
-Ladislas Nalborczyk, prenom.nom@gmail.com
+[Ladislas Nalborczyk](https://www.barelysignificant.com), prenom.nom@gmail.com
