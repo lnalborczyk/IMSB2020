@@ -2,7 +2,7 @@
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/lnalborczyk/IMSB2020?color=brightgreen&logo=github)](https://github.com/lnalborczyk/IMSB2020)
 [![GitHub last commit](https://img.shields.io/github/last-commit/lnalborczyk/IMSB2020?color=orange&logo=github)](https://github.com/lnalborczyk/IMSB2020)
-[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz)](https://twitter.com/lnalborczyk)
+[![Twitter Follow](https://img.shields.io/twitter/follow/lnalborczyk?label=%40lnalborczyk)](https://twitter.com/lnalborczyk)
 
 ## Programme
 
