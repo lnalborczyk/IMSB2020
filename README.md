@@ -1,4 +1,4 @@
-# Introduction à la modélisation statistique bayésienne : Un cours avec R, Stan, et brms
+# Introduction à la modélisation statistique bayésienne : Un cours avec R, Stan, et brms <img src="https://github.com/lnalborczyk/IMSB2020/cover.png" align="right" width="300px">
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/lnalborczyk/IMSB2020?color=brightgreen&logo=github)](https://github.com/lnalborczyk/IMSB2020)
 [![GitHub last commit](https://img.shields.io/github/last-commit/lnalborczyk/IMSB2020?color=orange&logo=github)](https://github.com/lnalborczyk/IMSB2020)
