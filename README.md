@@ -50,7 +50,7 @@ Suivre les liens ci-dessous pour consulter les slides en ligne.
 | Cours n°07 : Comparaison de modèles | Mardi 27 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours07)> |
 | Cours n°08 : Modèles multi-niveaux | Vendredi 30 Octobre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours08)> |
 | Cours n°09 : Modèles multi-niveaux généralisés | Mardi 3 Novembre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours09)> |
-| Cours n°10 : Data Hackaton | Vendredi 6 Novembre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10)> <[Zoom](https://univ-grenoble-alpes-fr.zoom.us/j/94061357264?pwd=cWJiZkVKejRiVWZaaEJaSS96LzNBZz09)> |
+| Cours n°10 : Data Hackaton | Vendredi 6 Novembre | <[slides](https://www.barelysignificant.com/IMSB2020/slides/Cours10)> |
 
 ## Pour aller plus loin
 
